@@ -31,7 +31,7 @@ class UsuarioController extends Controller
     public function store(Request $request)
     {
         $usuario = Usuario::create($request->all());
-        return response()->json(['usuario' => 'Se creo:' . $usuario]);
+        return response()->json(['usuario' =>  $usuario]);
     }
 
     /**
@@ -40,7 +40,7 @@ class UsuarioController extends Controller
     public function show($id)
     {
         $usuario = Usuario::findOrFail($id);
-        return response()->json(['usuario' => 'Resultado de busqueda' . $usuario]);
+        return response()->json(['usuario' => $usuario]);
     }
 
     /**
